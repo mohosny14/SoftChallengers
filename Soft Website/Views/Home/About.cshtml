@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Soft_Website.Models.Team>
+
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_IntroHeaderLayout_1.cshtml";
+    ViewBag.Message = "Learn More About Us";
+}
+
+<div class="about">
+    <div class="container">
+        <h3>About Soft Challenger</h3>
+        <br>
+        <br>
+        <p>“Soft Challenger” is a leading software company that is seeking quality and performance ,we work for providing the best software service and support through delivery and more.</p>
+        <a href="~/Contact">
+            <div class="btnCont">
+                CONTACTUS
+                <a href="~/Contact">
+                    <div class="btnCont_cover">
+                        CONTACTUS
+                    </div>
+                </a>
+            </div>
+        </a>
+    </div>
+</div>
+<br>
+
+<div class="ourTeam">
+    <div class="container">
+        <div class="ourTeam_slidr">
+            @foreach (var item in Model)
+            {
+                <div class="slidr_feat">
+                    <img src="~/imgs/teame/@Html.DisplayFor(modelItem => item.image)" />
+                    <div class="name">@Html.DisplayFor(modelItem => item.name) <br> @Html.DisplayFor(modelItem => item.Job_title)</div>
+                </div>
+            }
+            @*
+
+                <div class="slidr_feat"></div>*@
+        </div>
+    </div>
+</div>
